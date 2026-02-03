@@ -1,0 +1,196 @@
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FED34C 0%, #fec817 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+}
+
+.signin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signin-card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.signin-subtitle {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type='email'],
+.form-group input[type='password'],
+.form-group select {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input[type='email']:focus,
+.form-group input[type='password']:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+  border-color: #dc3545;
+}
+
+.form-group input.input-error:focus,
+.form-group select.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+  font-size: 12px;
+  color: #dc3545;
+  margin-top: -4px;
+}
+
+.submit-error {
+  padding: 12px;
+  background-color: #f8d7da;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.checkbox-group {
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+}
+
+.checkbox-label input[type='checkbox'] {
+  margin-top: 2px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.checkbox-label span {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.signin-button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #c2ab5f 0%, #edb911 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.signin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.signin-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.signin-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.signin-footer {
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.signin-footer p {
+  margin: 8px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.signin-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.signin-footer a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signin-card {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  .signin-card h1 {
+    font-size: 24px;
+  }
+}
