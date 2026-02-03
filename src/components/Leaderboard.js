@@ -90,7 +90,10 @@ function Leaderboard({ user }) {
             <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>Your Rank</div>
               <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#667eea' }}>
-                #{rankings.findIndex(u => u.isCurrentUser) + 1}
+                #{(() => {
+                  const rank = rankings.findIndex(u => u.isCurrentUser) + 1;
+                  return rank > 0 ? rank : 'N/A';
+                })()}
               </div>
             </div>
             <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px', textAlign: 'center' }}>
@@ -102,7 +105,11 @@ function Leaderboard({ user }) {
             <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>Top Percentile</div>
               <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#667eea' }}>
-                {Math.round(((rankings.length - rankings.findIndex(u => u.isCurrentUser)) / rankings.length) * 100)}%
+                {(() => {
+                  const index = rankings.findIndex(u => u.isCurrentUser);
+                  if (index === -1 || rankings.length === 0) return 'N/A';
+                  return Math.round(((rankings.length - index) / rankings.length) * 100) + '%';
+                })()}
               </div>
             </div>
           </div>
